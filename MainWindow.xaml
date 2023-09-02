@@ -7,7 +7,66 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
-    
 
+    <Window.Resources>
+        <SolidColorBrush x:Key="miColor" Color="Gold"/>
+        <SolidColorBrush x:Key="MyBrush" Color="#05E0E9"/>
+        <Style TargetType="Border">
+            <Setter Property="Background" Value="#4E1A3D"/>
+            <Setter Property="BorderThickness" Value="5"/>
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush>
+                        <GradientStop Offset="0.0" Color="#4E1A3D"/>
+                        <GradientStop Offset="1.0" Color="Salmon"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="DetallesTitulo">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="#4E87D4"/>
+            <Setter Property="FontFamily" Value="Trebuchet MS"/>
+            <Setter Property="Margin" Value="0 10 10 10"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="texto">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="{StaticResource MyBrush}"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0 3 10 0"/>
+        </Style>
+    </Window.Resources>
 
+    <Border>
+        <StackPanel>
+            <TextBlock Style="{StaticResource DetallesTitulo}">Titulo</TextBlock>
+            <TextBlock Style="{StaticResource texto}">label</TextBlock>
+            <TextBlock HorizontalAlignment="Right"
+                       FontSize="15"
+                       Foreground="{StaticResource MyBrush}"
+                       Text="My Text"></TextBlock>
+            <Button HorizontalAlignment="Left"
+                    Height="30"
+                    Background="{StaticResource MyBrush}"
+                    Margin="40" Width="78"
+                    />
+            <Ellipse HorizontalAlignment="Center"
+                     Width="50"
+                     Height="50"
+                     Fill="{StaticResource MyBrush}"
+                     Margin="10"/>
+            <Button Background="{StaticResource miColor}"
+                    Width="70"
+                    Height="30"
+                    Content="Click me!"
+                    Margin="5" Click="Button_Click"/>
+
+            <Button Background="{DynamicResource miColor}"
+                    Width="70"
+                    Height="30"
+                    Content="Click me!" Click="Button_Click_1"/>
+        </StackPanel>
+    </Border>
 </Window>

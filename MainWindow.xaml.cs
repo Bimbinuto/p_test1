@@ -30,5 +30,15 @@ namespace ProjectTestBibliotk
         {
             MessageBox.Show("Hola!");
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Resources["miColor"] = new SolidColorBrush(Colors.Red);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Resources["miColor"] = new SolidColorBrush(Colors.Green);
+        }
     }
 }

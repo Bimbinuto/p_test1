@@ -41,32 +41,66 @@
 
     <Border>
         <StackPanel>
-            <TextBlock Style="{StaticResource DetallesTitulo}">Titulo</TextBlock>
-            <TextBlock Style="{StaticResource texto}">label</TextBlock>
-            <TextBlock HorizontalAlignment="Right"
-                       FontSize="15"
-                       Foreground="{StaticResource MyBrush}"
-                       Text="My Text"></TextBlock>
-            <Button HorizontalAlignment="Left"
-                    Height="30"
-                    Background="{StaticResource MyBrush}"
-                    Margin="40" Width="78"
-                    />
-            <Ellipse HorizontalAlignment="Center"
-                     Width="50"
-                     Height="50"
-                     Fill="{StaticResource MyBrush}"
-                     Margin="10"/>
-            <Button Background="{StaticResource miColor}"
-                    Width="70"
-                    Height="30"
-                    Content="Click me!"
-                    Margin="5" Click="Button_Click"/>
+            <Grid Height="420">
 
-            <Button Background="{DynamicResource miColor}"
-                    Width="70"
-                    Height="30"
-                    Content="Click me!" Click="Button_Click_1"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid Grid.Column="0">
+                    <TextBlock Style="{StaticResource DetallesTitulo}">Titulo</TextBlock>
+                    <TextBlock Style="{StaticResource texto}">label</TextBlock>
+                    <TextBlock HorizontalAlignment="Right"
+                               FontSize="15"
+                               Foreground="{StaticResource MyBrush}"
+                               Text="My Text"></TextBlock>
+                    <Button HorizontalAlignment="Left"
+                            Height="30"
+                            Background="{StaticResource MyBrush}"
+                            Margin="40" Width="78"
+                            />
+                    <Ellipse HorizontalAlignment="Center"
+                             Width="50"
+                             Height="50"
+                             Fill="{StaticResource MyBrush}"
+                             Margin="10"/>
+                    <Button Background="{StaticResource miColor}"
+                            Width="70"
+                            Height="30"
+                            Content="Click me!"
+                            Margin="162,299,163,91" Click="Button_Click"/>
+
+                    <Button Background="{DynamicResource miColor}"
+                            Width="70"
+                            Height="30"
+                            Content="Click me!" Click="Button_Click_1" Margin="162,334,163,56"/>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <DataGrid x:Name="Tabla"
+                              SelectionChanged="DataGrid_SelectionChanged"
+                              Height="200"
+                              Width="360"
+                              BorderThickness="2"
+                              VerticalAlignment="Top"
+                              Margin="0 30 0 0"
+                              Background="AliceBlue"
+                              FontFamily="Courier new"
+                              />
+
+                    <Label Content="{Binding SelectedValue, ElementName=Tabla}"
+                           Name="Label1"
+                           Height="40"
+                           Width="250"
+                           Foreground="Aqua"
+                           Margin="0 100 0 0"
+                           HorizontalContentAlignment="Left"/>
+                </Grid>
+            </Grid>
+            
         </StackPanel>
+        
     </Border>
 </Window>

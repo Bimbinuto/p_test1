@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectTestBibliotk.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,13 @@ namespace ProjectTestBibliotk
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            Ventana1 ventana1 = new Ventana1();
+            this.MainWindow = ventana1;
+            ventana1.Show();
+        }
     }
 }
